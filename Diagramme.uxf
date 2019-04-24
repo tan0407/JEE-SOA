@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>40</y>
+      <w>120</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Rdv
+--
+-id: int
+-date:Date
+-patient:Patient
+--
++getDate():Date
++getPatient():Patient
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>40</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>RdvRepository
+--
+-findByName: List&lt;Rdv&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>264</y>
+      <w>176</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Patient
+--
+-id: int
+-name: String
+-phoneNumber: String
+-formerRdv : List&lt;Rdv&gt;
+--
++getId: int
++getName():String
++getPhoneNumber(): String
++getFormerRdv(): List&lt;Patient&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>248</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>PatientRepository
+--
+-findByName: List&lt;Patient&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>152</x>
+      <y>0</y>
+      <w>576</w>
+      <h>448</h>
+    </coordinates>
+    <panel_attributes>JPA
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>152</x>
+      <y>496</y>
+      <w>584</w>
+      <h>376</h>
+    </coordinates>
+    <panel_attributes>WebService
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>536</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>DoctisuiteClient
+--
+-log : Logger
+-
++main(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>528</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>DoctisuiteApplication
+--
++main(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>696</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>DoctisuiteService
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>88</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>192</y>
+      <w>40</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=1..1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

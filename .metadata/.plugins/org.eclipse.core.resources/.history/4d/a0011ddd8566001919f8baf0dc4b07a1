@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Doctisuite</title>
+</head>
+<body>
+	<h1> Welcome to Doctisuite </h1>
+	<label for="name">Name to search</label>
+	<input type="text" id="name" name="name">
+</body>
+</html>
