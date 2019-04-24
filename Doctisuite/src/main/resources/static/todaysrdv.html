@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Today's RDVs</title>
+</head>
+<body>
+    <div id="rdv">
+        <script type="text/javascript">
+           document.addEventListener('DOMContentLoaded',function(){
+        getRdvs();
+        },false);
+
+        function getRdvs(){
+            var xttp = new XMLHttpRequest();
+            xttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("rdv").innerHTML = this.responseText;
+                }
+            };
+            xttp.open("GET","http://localhost:8080/todaysrdv",true);
+            xttp.send();
+        }
+
+        </script>
+    </div>
+</body>
+</html>
