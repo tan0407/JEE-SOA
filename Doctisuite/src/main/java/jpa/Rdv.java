@@ -1,8 +1,12 @@
 package jpa;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 import java.util.Date;
 
 
@@ -18,14 +22,12 @@ public class Rdv {
 	public Rdv() {
 		
 	}
-	public Rdv(long id,Date date, Patient patient) {
-		super();
-		this.id = id;
+	public Rdv(Date date, Patient patient) {
 		this.date = date;
 		this.patient = patient;
 	}
 	
-	@ManyToOne
+	@OneToOne
 	public Patient getPatient() {
 		return patient;
 	}
@@ -36,6 +38,7 @@ public class Rdv {
 
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}

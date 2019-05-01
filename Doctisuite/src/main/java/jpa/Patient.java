@@ -3,10 +3,15 @@ package jpa;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 @Entity
 public class Patient {
@@ -19,20 +24,19 @@ public class Patient {
 	public Patient() {
 	}
 
-	public Patient(long id, String phoneNumber, String name, List<Rdv> rdv) {
+	public Patient(String phoneNumber, String name, List<Rdv> rdv) {
 		this.name = name;
-		this.id = id;
 		this.phoneNumber = phoneNumber;
 		this.rdv = rdv;
 	}
 
-	public Patient(long id, String phoneNumber, String name) {
+	public Patient(String phoneNumber, String name) {
 		this.name = name;
-		this.id = id;
 		this.phoneNumber = phoneNumber;
 		this.rdv = new ArrayList<Rdv>();
 	}
-
+	@OneToMany(mappedBy="patient",cascade=CascadeType.ALL)
+	@NotFound(action = NotFoundAction.IGNORE)
 	public List<Rdv> getRdvs() {
 		return this.rdv;
 	}
