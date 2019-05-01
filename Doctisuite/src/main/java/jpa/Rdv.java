@@ -1,5 +1,6 @@
 package jpa;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class Rdv {
 		this.patient = patient;
 	}
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public Patient getPatient() {
 		return patient;
 	}
